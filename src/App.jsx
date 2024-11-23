@@ -13,11 +13,19 @@ import AddTodoForm from './AddTodoForm';
 function App() {
   const [count, setCount] = useState(0)
 
+  const [newTodo, setNewTodo] = useState('');
+
+{/* THis is how you add a comment. Also imported TodoList */}
+
   return (
     <>
       <h1>To-Do List</h1>
-      <AddTodoForm/>
-      {/* THis is how you add a comment. Also imported TodoList */}
+      
+      <AddTodoForm onAddTodo={setNewTodo}/>
+      
+      
+      <p>{newTodo}</p>
+
       <TodoList />
     </>
   );
