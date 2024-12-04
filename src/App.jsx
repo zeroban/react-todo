@@ -11,9 +11,14 @@ import AddTodoForm from './AddTodoForm';
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  const [newTodo, setNewTodo] = useState('');
+    // the "todoList" will hold the array of todos and the "setTodoList" will update the state when we add or manipulate the todos 
+  const [todoList, setTodoList] = useState([]);
+
+  function addTodo(newTodo) {
+    setTodoList((prevTodos) => [...prevTodos, newTodo]);
+
+  }
 
 {/* THis is how you add a comment. Also imported TodoList */}
 
@@ -21,12 +26,10 @@ function App() {
     <>
       <h1>To-Do List</h1>
       
-      <AddTodoForm onAddTodo={setNewTodo}/>
+      <AddTodoForm onAddTodo={addTodo}/> {/* will pass the addTodo function as a prop */}
       
-      
-      <p>{newTodo}</p>
-
-      <TodoList />
+      { /* Passed the todoList state as a prop to the TodoList compnent */ }
+      <TodoList todoList={todoList} />
     </>
   );
 }

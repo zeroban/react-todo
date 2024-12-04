@@ -1,9 +1,7 @@
-function TodoListItem (props) {
+function TodoListItem ({todo}) {
     // multiple-line return statement
     return (
-        <div>
-          <li> {props.todo.title} </li>
-        </div>
+          <li> {todo.title} </li>
       );
 
 }

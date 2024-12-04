@@ -1,22 +1,8 @@
 import TodoListItem from "./TodoListItem";
 
-// Created an array of objects  
-const todoList = [
-    {
-      id:1,
-      title: "Complete assignment 1"
-    },
-    {
-      id:2,
-      title: "Complete assignment 2"
-    },
-    {
-      id:3,
-      title: "Complete assignment 3"
-    }
-  ];
 
-function TodoList () {
+// updated function to accept props
+function TodoList ({todoList}) {
     return (
     <div>
         <ul>
