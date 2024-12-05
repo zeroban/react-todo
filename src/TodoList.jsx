@@ -1,5 +1,4 @@
-
-
+import TodoListItem from "./TodoListItem";
 
 // Created an array of objects  
 const todoList = [
@@ -22,7 +21,8 @@ function TodoList () {
     <div>
         <ul>
         {todoList.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+          <TodoListItem key={todo.id} todo={todo} />
+          
         ))}
       </ul>
     </div>
